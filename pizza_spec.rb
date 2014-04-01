@@ -6,9 +6,10 @@ describe Pizza do
   end
 
   describe "#new" do
-    it "takes three parameters and returns a Pizza object" do
+    it "can take 2 parameters and returns a Pizza object" do
         @pizza.should be_an_instance_of Pizza
     end
+
   end
 
   describe '#name' do
@@ -31,24 +32,27 @@ describe Pizza do
     end
   end
 
-  describe '#bake_time' do
-    it "bake_time is a integer" do
-      @pizza.bake_time.should be_a_kind_of Integer
+  describe '#time_baked' do
+    it "time_baked is a integer" do
+      @pizza.time_baked.should be_a_kind_of Integer
     end
 
     it "should default to 0" do
-      @pizza.bake_time.should eql 0
+      @pizza.time_baked.should eql 0
     end
-
-    it "returns the correct bake_time" do
-      @pizza.bake_time = 350
-      @pizza.bake_time.should eql 350
-    end
-
 
   end
 
+  describe '#toppings' do
+    it "should be an array" do
+      @pizza.toppings.should be_a_kind_of Array
+    end
 
+    it "should have many toppings" do
+      @pizza.toppings.concat(["Pepperoni","cheese","sausage"])
+      @pizza.toppings.count.should > 1
+    end
+  end
 
 end
 
