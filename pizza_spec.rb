@@ -11,6 +11,36 @@ describe Pizza do
     end
   end
 
+  describe '#name' do
+    it "name is a string" do
+      @pizza.name.should be_a_kind_of String
+    end
+
+    it "returns the correct name" do
+      @pizza.name.should eql "name"
+    end
+  end
+
+  describe '#description' do
+    it "description is a string" do
+      @pizza.description.should be_a_kind_of String
+    end
+
+    it "returns the correct description" do
+      @pizza.description.should eql "description"
+    end
+  end
+
+  describe '#bake_time' do
+    it "bake_time is a integer" do
+      @pizza.bake_time.should be_a_kind_of Integer
+    end
+
+    it "returns the correct bake_time" do
+      @pizza.bake_time.should eql 0
+    end
+  end
+
 
 
 end
