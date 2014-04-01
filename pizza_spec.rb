@@ -2,7 +2,7 @@ require_relative 'pizza'
 
 describe Pizza do
   before :each do
-    @pizza = Pizza.new("name", "description", 0)
+    @pizza = Pizza.new("name", "description")
   end
 
   describe "#new" do
@@ -36,9 +36,16 @@ describe Pizza do
       @pizza.bake_time.should be_a_kind_of Integer
     end
 
-    it "returns the correct bake_time" do
+    it "should default to 0" do
       @pizza.bake_time.should eql 0
     end
+
+    it "returns the correct bake_time" do
+      @pizza.bake_time = 350
+      @pizza.bake_time.should eql 350
+    end
+
+
   end
 
 
